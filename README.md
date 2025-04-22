@@ -59,5 +59,7 @@ The dataset used is a publicly available Netflix dataset containing:
 
 2. OR  install PostgreSQl and create a database 'NETFLIX';
 3. create a table as netflix
-4. right click in table and select pl/sql tool and write  the netflix code.
-5. run and save the code
+4. right click in table and select import/export table and import the netflix.csv file i have given by excel.
+5. after the process is finished and passed
+6. click the netflix table and select pl/sql tool and write  the netflix code.
+7. run and save the code
