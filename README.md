@@ -14,7 +14,7 @@ The goal is to perform structured data analysis on the Netflix dataset using SQL
 ## 🧰 Tools & Technologies Used
 
 - **SQL** (Structured Query Language)
-- **MySQL** (or any other SQL-compatible DBMS)
+- **PostgreSQL (for doing all this code and compling)
 - **DB Browser for SQLite / MySQL Workbench / WAMP Server** *(based on your environment)*
 - **Git & GitHub** for version control and project hosting
 
@@ -54,3 +54,10 @@ The dataset used is a publicly available Netflix dataset containing:
 1. Clone this repository:
    ```bash
    git clone https://github.com/prajavkrish/NETFLIX.git
+
+
+
+2. OR  install PostgreSQl and create a database 'NETFLIX';
+3. create a table as netflix
+4. right click in table and select pl/sql tool and write  the netflix code.
+5. run and save the code
