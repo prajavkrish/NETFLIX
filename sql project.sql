@@ -25,12 +25,6 @@ GROUP BY type;
 select distinct director from NETFLIX
 
  --2.Find the most Common rating for movies and Tv Shows--
-SELECT type, rating, COUNT(*) AS total
-FROM NETFLIX
-GROUP BY type, rating
-ORDER BY type, total ASC;
-
-
 select type,rating
 from
  (select 
@@ -51,13 +45,6 @@ AND
  TYPE='Movie'
 
  --4.Find the Top 5 countries with the most content on netflix--
-SELECT COUNTRY, COUNT(*) AS TOTAL_CONTENT
-FROM NETFLIX 
-GROUP BY COUNTRY
-ORDER BY TOTAL_CONTENT DESC
-LIMIT 2;
-
-
 select
      unnest(string_to_array(country,',')) as new_country,
      count(show_id) as total_content
@@ -67,13 +54,6 @@ order by Total_content desc
 limit 5
 
 --5.Identify the Longest Movie --
-SELECT TYPE,DURATION ,title
-FROM NETFLIX
-WHERE TYPE='Movie'
-order by duration desc
-limit 5;
-
-
 select * from netflix
 	where
 	  Type ='Movie'
@@ -88,19 +68,10 @@ select * from netflix
  group by listed_in;
  
  --7.Find all the movie/Tv show by director ‘Rajiv Chilaka' --
- select type,title,director 
- from NETFLIX 
- where director='Rajiv Chilaka';
-
    select * from netflix
    where director ilike '%Rajiv Chilaka%'
 
 --8.List all Tv shows with more than 5 seasons --
-select type ,duration,title from NETFLIX
-WHERE TYPE='TV Show' and duration>'5 Sesons'
-order by duration asc;
-
-
   select * from netflix
 	 where 
 	     type ='TV Show' 
@@ -109,12 +80,6 @@ order by duration asc;
 
 		 
 --9.Count the number of content items in each genre --
-select listed_in, count(*) as total_num_of_items
-from NETFLIX
-GROUP BY listed_in
-order by total_num_of_items asc;
-
-
 select 
 UNNEST(String_To_Array(listed_in,',')) AS Genre,
 COUNT(show_id) as total_content
@@ -124,15 +89,7 @@ GROUP BY 1
 
 		
 --10.Find each year and the average numbers of content release in India on Netflix,Top 5 years with highest average content releases-
-
-SELECT release_year, COUNT(*) AS total_content
-FROM NETFLIX
-WHERE country = 'India'
-GROUP BY release_year
-order by total_content desc
-limit 5;
-
- select
+select
  EXTRACT(YEAR FROM To_date(date_added,'Month DD, YYYY')) AS YEAR,
 count(*) as yearly_content,
 Round(count(*)::numeric/(select count(*) from netflix where country='India')::numeric * 100,2) as avg_content_per_year
@@ -141,12 +98,6 @@ where country = 'India'
 group by 1
 
  --11.List all movie that are Documentaries--
-
-select TYPE,listed_in,title
-from NETFLIX
-WHERE TYPE='Movie'
-and listed_in='Documentaries';
-
  select * from netflix
    where
        listed_in ilike '%documentaries%'
@@ -162,11 +113,6 @@ and listed_in='Documentaries';
 
 
  --13.Find how many movies actor 'Salman Khan' appeared in last 10 years --
-
-select count(*) as total_movies
-from NETFLIX
-where type='Movies' and cast_list='Salman Khan'
-and release_year >=2015;
 
  select * from netflix
 		 where
