@@ -1,3 +1,4 @@
+[netflix_titles.csv](https://github.com/user-attachments/files/19854989/netflix_titles.csv)-----for database
 # 📊 Netflix Content Analysis
 
 This project focuses on analyzing Netflix's catalog using SQL. By exploring key attributes such as content type, genre, rating, and release years, this analysis uncovers insights about the content distribution on the platform.
