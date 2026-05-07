@@ -11,7 +11,7 @@ The goal is to perform structured data analysis on the Netflix dataset using SQL
 - What is the most common rating for Movies and TV Shows?
 - How has the content changed over the years?
 
-## 🧰 Tools & Technologies Used
+## 🧰 Tools & Technologies Used:
 
 - **SQL** (Structured Query Language)
 - **PostgreSQL (for doing all this code and compling)
