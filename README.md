@@ -3,7 +3,7 @@
 
 This project focuses on analyzing Netflix's catalog using SQL. By exploring key attributes such as content type, genre, rating, and release years, this analysis uncovers insights about the content distribution on the platform.
 
-## 🔍 Objective
+## 🔍 Objectives
 
 The goal is to perform structured data analysis on the Netflix dataset using SQL queries to answer real-world business questions like:
 - What is the distribution of Movies vs TV Shows?
